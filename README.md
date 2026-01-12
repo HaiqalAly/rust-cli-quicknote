@@ -23,7 +23,7 @@ See [CHANGELOG.md](CHANGELOG.md) for project updates.
 
 ## Roadmap
 [ DONE! ] **Timestamps**: Automatically prefix notes with [YYYY-MM-DD HH:MM]<br>
-[ ] **Colored Text**: Add some color to the text<br>
+[ DONE! ] **Colored Text**: Add some color to the text<br>
 [ ] **Interactive Mode**: A "waiting" prompt so you can type notes without restarting the app<br>
 [ ] **Custom File Paths**: Allow users to specify where their notes are saved<br>
 [ ] **List/Delete**: Add commands to view or clear the notes list<br>
