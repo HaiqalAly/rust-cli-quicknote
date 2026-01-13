@@ -18,13 +18,14 @@ fn main() -> Result<(), Error>{
             let mut input = String::new();
             std::io::stdin().read_line(&mut input)?;
             let input = input.trim();
-            if input.to_lowercase() == "quit" {
-                break
-            }
-            if !input.is_empty() {
-                save_note(input)?;
-            } else {
-                println!("{}", "Please enter a valid note.".red().bold());
+            match input.to_lowercase().as_str() {
+                "quit" => {
+                    break
+                } "" => {
+                    println!("{}", "Please enter a valid note.".red().bold());
+                } _ => {
+                    save_note(input)?;
+                }
             }
         }
     } else {
@@ -32,7 +33,10 @@ fn main() -> Result<(), Error>{
         save_note(&message)?;
     };
 
-    fn save_note(message: &str) -> Result<(), Error> {
+    Ok(())
+}
+
+fn save_note(message: &str) -> Result<(), Error> {
         let now: DateTime<Local> = Local::now();
         let time = now.format("%Y-%m-%d %H:%M:%S").to_string();
 
@@ -44,7 +48,4 @@ fn main() -> Result<(), Error>{
         writeln!(file, "{}, Created at: {}", message, time)?;
         println!("{}", "Note saved!".green().bold());
         Ok(())
-    }
-
-    Ok(())
 }

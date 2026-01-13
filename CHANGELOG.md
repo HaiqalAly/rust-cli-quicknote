@@ -2,6 +2,12 @@
 
 A simple list of changes to my QuickNote CLI project.
 
+## January 13, 2026
+- **Code Refactoring:**
+    - Refactored input validation to use Rust pattern matching (`match`) instead of nested if-else statements for cleaner, more idiomatic code.
+    - Moved `save_note` function outside of `main` to improve code organization and modularity.
+- **Code Quality:** Improved code readability and maintainability following Rust best practices.
+
 ## January 12, 2026
 - **Added Interactive Mode:** The program now enters a live input loop if no command-line arguments are provided.
 - **Improved CLI Arguments:** Used argument joining to allow multi-word notes without needing quotation marks.
