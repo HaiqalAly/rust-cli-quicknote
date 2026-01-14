@@ -2,6 +2,13 @@
 
 A simple list of changes to my QuickNote CLI project.
 
+## January 15, 2026
+- **Refactoring:**
+    - Extracted core logic into a dedicated `take_note` function to separate initialization from execution.
+    - Simplified `main` function to handle only configuration steps.
+- **Improvement:**
+    - `save_note` now respects user-provided file extensions, only appending `.txt` if no extension is present.
+
 ## January 14, 2026
 - **New Feature: Custom Save Paths:**
     - Users can now specify a custom file path for saving notes (defaults to `notes.txt`).

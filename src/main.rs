@@ -6,22 +6,24 @@ use std::{env, io};
 use std::{io::Error, io::Write};
 
 fn main() -> Result<(), Error> {
-    let args: Vec<String> = env::args().collect();
     println!("Where do you want to save the notes? (default: notes.txt)");
     io::stdout().flush()?;
     print!("{} ", ">".blue());
     io::stdout().flush()?;
+    
     let mut save_location = String::new();
-    std::io::stdin().read_line(&mut save_location)?;
-    let save_location: &str = save_location.trim();
-    // TODO: should probably expand the tilde (~) for home directory and validate the path exists
-    // or at least check if we can write to that location before starting
-    let save_location = if save_location.is_empty() {
-        "notes.txt"
-    } else {
-        save_location
-    };
+    io::stdin().read_line(&mut save_location)?;
+    let trimmed_path = save_location.trim();
 
+    let final_path = if trimmed_path.is_empty() { "notes.txt" } else { trimmed_path };
+
+    take_note(final_path)?;
+
+    Ok(())
+}
+
+fn take_note(save_location: &str) -> Result<(), Error>{
+    let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
         print!("Enter your note (or '{}' to exit): ", "quit".red().bold());
         io::stdout().flush()?;
@@ -53,8 +55,10 @@ fn main() -> Result<(), Error> {
 fn save_note(message: &str, path: &str) -> Result<(), Error> {
     let now: DateTime<Local> = Local::now();
     let time = now.format("%Y-%m-%d %H:%M:%S").to_string();
-    // TODO: this will always force .txt extension even if user specified something else - maybe respect their choice?
-    let path = PathBuf::from(path).with_extension("txt");
+    let mut path = PathBuf::from(path);
+    if path.extension().is_none() {
+        path.set_extension("txt");
+    }
 
     let mut file = OpenOptions::new().create(true).append(true).open(path)?;
 
