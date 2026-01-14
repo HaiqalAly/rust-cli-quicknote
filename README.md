@@ -2,7 +2,7 @@
 A lightning-fast command-line tool for capturing thoughts before they vanish. Written in Rust as a learning project.
 
 ## How it Works
-QuickNote takes your input and appends it to a local notes.txt file with timestamps. You can use it in two ways:
+QuickNote takes your input and appends it to a file with timestamps. You can specify a custom file path or press Enter to use the default `notes.txt`.
 
 **Usage**:
 ```bash
@@ -10,15 +10,19 @@ QuickNote takes your input and appends it to a local notes.txt file with timesta
 git clone https://github.com/HaiqalAly/rust-cli-quicknote.git
 cd rust-cli-quicknote
 
-# Quick note mode (single note)
-cargo run -- "Pick up milk on the way home"
-
-# Interactive mode (multiple notes)
+# Interactive mode (Recommended)
 cargo run
-# Then type notes at the prompt. Type 'quit' to exit.
+# 1. Enter save location (or press Enter for default)
+# 2. Type notes at the '>' prompt
+# 3. Type 'quit' to exit
+
+# Single note mode
+cargo run -- "Pick up milk on the way home"
+# (You will be prompted for save location first)
 ```
 
 ## Features
+- **Custom Save Location**: Choose where to store your notes on startup
 - **Interactive Mode**: Enter a persistent session to quickly add multiple notes without restarting
 - **Automatic Timestamps**: Each note is prefixed with [YYYY-MM-DD HH:MM:SS]
 - **Colored Output**: Visual feedback with green success messages and colored prompts
@@ -28,6 +32,8 @@ cargo run
 
 See [CHANGELOG.md](CHANGELOG.md) for project updates.
 
-## Roadmap
-[ ] **Custom File Paths**: Allow users to specify where their notes are saved<br>
-[ ] **List/Delete**: Add commands to view or clear the notes list<br>
+## Planned Features
+[x] **Custom File Paths**: Users can now specify where their notes are saved (still finicky and need improvement)<br>
+[ ] **List/Search Commands**: Add commands to view recent notes or search through them<br>
+[ ] **Tags & Categories**: Organize notes with labels for better filtering<br>
+[ ] **Path Expansion**: Support for `~` (home directory) in file paths<br>

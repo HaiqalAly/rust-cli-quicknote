@@ -2,6 +2,14 @@
 
 A simple list of changes to my QuickNote CLI project.
 
+## January 14, 2026
+- **New Feature: Custom Save Paths:**
+    - Users can now specify a custom file path for saving notes (defaults to `notes.txt`).
+    - Added prompt for save location on startup.
+- **Code Review & Documentation:**
+    - Added TODO comments throughout the codebase identifying areas for future improvements.
+    - Improved note format from "message, Created at: timestamp" to "message [timestamp]" for better readability.
+
 ## January 13, 2026
 - **Code Refactoring:**
     - Refactored input validation to use Rust pattern matching (`match`) instead of nested if-else statements for cleaner, more idiomatic code.
