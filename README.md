@@ -3,6 +3,7 @@ A lightning-fast command-line tool for capturing thoughts before they vanish. Wr
 
 ## How it Works
 QuickNote takes your input and appends it to a file with timestamps. You can specify a custom file path or press Enter to use the default `notes.txt`.
+Now includes menu to either add new notes or view existing ones.
 
 **Usage**:
 ```bash
@@ -13,8 +14,8 @@ cd rust-cli-quicknote
 # Interactive mode (Recommended)
 cargo run
 # 1. Enter save location (or press Enter for default)
-# 2. Type notes at the '>' prompt
-# 3. Type 'quit' to exit
+# 2. Choose action: 'list' (view notes) or 'add' (new notes)
+# 3. If 'add': Type notes at the '>' prompt (type 'quit' to exit)
 
 # Single note mode
 cargo run -- "Pick up milk on the way home"
@@ -22,6 +23,8 @@ cargo run -- "Pick up milk on the way home"
 ```
 
 ## Features
+- **View Notes**: Read your saved notes directly from the terminal
+- **Interactive Menu**: Choose between listing or adding notes
 - **Custom Save Location**: Choose where to store your notes on startup
 - **Interactive Mode**: Enter a persistent session to quickly add multiple notes without restarting
 - **Automatic Timestamps**: Each note is prefixed with [YYYY-MM-DD HH:MM:SS]
@@ -33,7 +36,7 @@ cargo run -- "Pick up milk on the way home"
 See [CHANGELOG.md](CHANGELOG.md) for project updates.
 
 ## Planned Features
-[x] **Custom File Paths**: Users can now specify where their notes are saved (still finicky and need improvement)<br>
-[ ] **List/Search Commands**: Add commands to view recent notes or search through them<br>
+[x] **Custom File Paths**: Users can now specify where their notes are saved<br>
+[ ] **List/Search Commands**: Add commands to view recent notes or search through them(List command have been implemented but it's still need improvements)<br>
 [ ] **Tags & Categories**: Organize notes with labels for better filtering<br>
 [ ] **Path Expansion**: Support for `~` (home directory) in file paths<br>

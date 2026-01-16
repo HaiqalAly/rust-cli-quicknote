@@ -2,6 +2,10 @@
 
 A simple list of changes to my QuickNote CLI project.
 
+## January 16, 2026
+- **New Feature: View Notes:** Added a "list" command to view existing notes directly from the CLI.
+- **Interactive Menu:** Introduced a new main menu to choose between adding new notes (`add`) or listing existing ones (`list`).
+
 ## January 15, 2026
 - **Refactoring:**
     - Extracted core logic into a dedicated `take_note` function to separate initialization from execution.
