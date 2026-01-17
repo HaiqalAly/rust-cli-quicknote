@@ -16,10 +16,6 @@ cargo run
 # 1. Enter save location (or press Enter for default)
 # 2. Choose action: 'list' (view notes) or 'add' (new notes)
 # 3. If 'add': Type notes at the '>' prompt (type 'quit' to exit)
-
-# Single note mode
-cargo run -- "Pick up milk on the way home"
-# (You will be prompted for save location first)
 ```
 
 ## Features
