@@ -2,11 +2,15 @@
 
 A simple list of changes to my QuickNote CLI project.
 
+## January 18, 2026
+- **Note Display:** Notes are now parsed and formatted. Timestamps are visually separated from the message content using a dimmed style for better focus on the text.
+
 ## January 17, 2026
 - **Architecture Change:** Removed single-line argument mode to focus entirely on the interactive menu experience.
 - **Refactoring:**
     - Cleaned up `main` function by removing `env::args` logic.
     - Simplified path handling and imports.
+    - Extracted core note management functions (`take_note`, `read_note`, `save_note`) into a new `notes.rs` module for better separation of concerns.
 
 ## January 16, 2026
 - **New Feature: View Notes:** Added a "list" command to view existing notes directly from the CLI.

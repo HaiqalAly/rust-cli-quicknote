@@ -1,6 +1,16 @@
 # QuickNote CLI
 A lightning-fast command-line tool for capturing thoughts before they vanish. Written in Rust as a learning project.
 
+## Project Status: Complete (Learning Milestone)
+This was my first project in Rust, focused on mastering CLI basics, module system and error handling. I have achieved my primary learning goals and am moving on to more complex projects.
+
+### Few Key Learning Outcomes
+- Memory Safety: Practiced string ownership and borrowing across modules.
+- Crates: Integrated chrono for time and colorize for terminal UI.
+- Idiomatic Rust: Refactored from if/else to match patterns.
+- STD API: Used fs::OpenOptions for file manipulation, PathBuf for path handling, and io::stdin()/stdout() for user interaction.
+- String Parsing & Manipulation: Used rsplit_once() for timestamp extraction and trim() variations for input sanitization.
+
 ## How it Works
 QuickNote takes your input and appends it to a file with timestamps. You can specify a custom file path or press Enter to use the default `notes.txt`.
 Now includes menu to either add new notes or view existing ones.
@@ -31,8 +41,6 @@ cargo run
 
 See [CHANGELOG.md](CHANGELOG.md) for project updates.
 
-## Planned Features
-[x] **Custom File Paths**: Users can now specify where their notes are saved<br>
-[ ] **List/Search Commands**: Add commands to view recent notes or search through them(List command have been implemented but it's still need improvements)<br>
-[ ] **Tags & Categories**: Organize notes with labels for better filtering<br>
-[ ] **Path Expansion**: Support for `~` (home directory) in file paths<br>
+## Future Ideas (If i return to this)
+**Tags & Categories**: Organize notes with labels for better filtering<br>
+**Path Expansion**: Support for `~` (home directory) in file paths<br>
