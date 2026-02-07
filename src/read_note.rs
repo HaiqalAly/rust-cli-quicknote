@@ -1,9 +1,12 @@
-use std::io::Error;
 use colored::Colorize;
+use std::io::Error;
 
 pub fn read_note(path: &str) -> Result<(), Error> {
     if !std::path::Path::new(path).exists() {
-        println!("{}", "File not found! Please add a note first.".red().bold());
+        println!(
+            "{}",
+            "File not found! Please add a note first.".red().bold()
+        );
         return Ok(());
     }
 
@@ -18,7 +21,13 @@ pub fn read_note(path: &str) -> Result<(), Error> {
 
             if let Some((message, time)) = line.rsplit_once('[') {
                 let time = time.trim_end_matches(']');
-                println!("{} {} {} {}", id.to_string().cyan(), ">".blue(), format!("[{}]", time).dimmed(), message.trim());
+                println!(
+                    "{} {} {} {}",
+                    id.to_string().cyan(),
+                    ">".blue(),
+                    format!("[{}]", time).dimmed(),
+                    message.trim()
+                );
             } else {
                 println!("{} {} {}", id.to_string().cyan(), ">".blue(), line);
             }

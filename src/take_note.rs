@@ -1,10 +1,13 @@
-use std::{io, io::Error, io::Write};
 use colored::Colorize;
+use std::{io, io::Error, io::Write};
 
 use crate::save_note::save_note;
 
-pub fn take_note(save_location: &str) -> Result<(), Error>{
-    println!("\nType your note below. Type '{}' to finish.", "quit".red().bold());
+pub fn take_note(save_location: &str) -> Result<(), Error> {
+    println!(
+        "\nType your note below. Type '{}' to finish.",
+        "quit".red().bold()
+    );
     loop {
         print!("\n{} ", ">".blue());
         io::stdout().flush()?;

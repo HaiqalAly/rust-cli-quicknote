@@ -1,5 +1,5 @@
-use std::io::{self, Write, Error};
 use colored::Colorize;
+use std::io::{self, Error, Write};
 
 use crate::read_note;
 

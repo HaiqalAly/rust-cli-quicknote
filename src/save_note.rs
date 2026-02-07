@@ -1,7 +1,7 @@
-use std::fs::OpenOptions;
-use std::{io::Error, io::Write};
 use chrono::{self, DateTime, Local};
 use colored::Colorize;
+use std::fs::OpenOptions;
+use std::{io::Error, io::Write};
 
 pub fn save_note(message: &str, path: &str) -> Result<(), Error> {
     let now: DateTime<Local> = Local::now();
