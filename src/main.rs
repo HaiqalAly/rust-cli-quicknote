@@ -2,14 +2,11 @@ use colored::Colorize;
 use std::path::PathBuf;
 use std::{io, io::Error, io::Write, process::Command};
 
-mod delete_note;
-mod read_note;
-mod save_note;
-mod take_note;
+mod quicknote;
 
-use delete_note::delete_note;
-use read_note::read_note;
-use take_note::take_note;
+use quicknote::delete_note::delete_note;
+use quicknote::read_note::read_note;
+use quicknote::take_note::take_note;
 
 fn main() -> Result<(), Error> {
     println!("Where do you want to save the notes? (default: notes.txt)");

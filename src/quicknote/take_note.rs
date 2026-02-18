@@ -1,7 +1,7 @@
 use colored::Colorize;
 use std::{io, io::Error, io::Write};
 
-use crate::save_note::save_note;
+use crate::quicknote::save_note::save_note;
 
 pub fn take_note(save_location: &str) -> Result<(), Error> {
     println!(

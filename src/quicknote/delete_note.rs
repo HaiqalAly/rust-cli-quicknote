@@ -1,7 +1,7 @@
 use colored::Colorize;
 use std::io::{self, Error, Write};
 
-use crate::read_note;
+use crate::quicknote::read_note::read_note;
 
 pub fn delete_note(path: &str) -> Result<(), Error> {
     read_note(path)?;
